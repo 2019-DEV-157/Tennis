@@ -20,4 +20,8 @@ public class Game {
     func playerWinPoint(player: Player){
         player.points += 1
     }
+    
+    func getPlayerWithHighestScore() -> Player{
+        return self.playerTwo
+    }
 }
