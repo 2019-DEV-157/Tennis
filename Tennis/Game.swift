@@ -42,4 +42,8 @@ public class Game {
             return false
         }
     }
+    
+    func isDeuce() -> Bool {
+        return true
+    }
 }

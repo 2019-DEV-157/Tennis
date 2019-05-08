@@ -68,6 +68,17 @@ class GameTests: XCTestCase {
 
         XCTAssert(game.hasWinner() == true)
     }
+    
+    func testIsDeuce(){
+        let playerOne = Player(playerName: "Player 1")
+        let playerTwo = Player(playerName: "Player 2")
+        
+        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerTwo)
+        
+        XCTAssert(game.isDeuce() == true)
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
