@@ -10,6 +10,9 @@
 		3C6C71192283095F00FC3E8A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C71182283095F00FC3E8A /* Player.swift */; };
 		3C6C711B228309E700FC3E8A /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C711A228309E700FC3E8A /* PlayerTests.swift */; };
 		3C6C711C228309EB00FC3E8A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C71182283095F00FC3E8A /* Player.swift */; };
+		3C6C711E22830B0000FC3E8A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C711D22830B0000FC3E8A /* Game.swift */; };
+		3C6C711F22830B0000FC3E8A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C711D22830B0000FC3E8A /* Game.swift */; };
+		3C6C712122830B2600FC3E8A /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C712022830B2600FC3E8A /* GameTests.swift */; };
 		3CFBFA902283021C0016A811 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA7A2282D6CE0016A811 /* main.swift */; };
 		3CFBFA92228303D50016A811 /* TennisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA89228301290016A811 /* TennisTests.swift */; };
 		3CFBFA96228306860016A811 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA7A2282D6CE0016A811 /* main.swift */; };
@@ -30,6 +33,8 @@
 /* Begin PBXFileReference section */
 		3C6C71182283095F00FC3E8A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3C6C711A228309E700FC3E8A /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
+		3C6C711D22830B0000FC3E8A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		3C6C712022830B2600FC3E8A /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		3CFBFA772282D6CE0016A811 /* Tennis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tennis; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFBFA7A2282D6CE0016A811 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3CFBFA87228301290016A811 /* TennisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TennisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +83,7 @@
 			children = (
 				3CFBFA7A2282D6CE0016A811 /* main.swift */,
 				3C6C71182283095F00FC3E8A /* Player.swift */,
+				3C6C711D22830B0000FC3E8A /* Game.swift */,
 			);
 			path = Tennis;
 			sourceTree = "<group>";
@@ -87,6 +93,7 @@
 			children = (
 				3CFBFA89228301290016A811 /* TennisTests.swift */,
 				3C6C711A228309E700FC3E8A /* PlayerTests.swift */,
+				3C6C712022830B2600FC3E8A /* GameTests.swift */,
 				3CFBFA8B228301290016A811 /* Info.plist */,
 			);
 			path = TennisTests;
@@ -181,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6C71192283095F00FC3E8A /* Player.swift in Sources */,
+				3C6C711E22830B0000FC3E8A /* Game.swift in Sources */,
 				3CFBFA96228306860016A811 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6C711C228309EB00FC3E8A /* Player.swift in Sources */,
+				3C6C712122830B2600FC3E8A /* GameTests.swift in Sources */,
+				3C6C711F22830B0000FC3E8A /* Game.swift in Sources */,
 				3CFBFA92228303D50016A811 /* TennisTests.swift in Sources */,
 				3C6C711B228309E700FC3E8A /* PlayerTests.swift in Sources */,
 				3CFBFA902283021C0016A811 /* main.swift in Sources */,
