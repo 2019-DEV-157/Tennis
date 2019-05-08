@@ -32,4 +32,8 @@ public class Game {
             return nil
         }
     }
+    
+    func hasWinner() -> Bool {
+        return true
+    }
 }

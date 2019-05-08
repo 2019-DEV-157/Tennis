@@ -55,6 +55,16 @@ class GameTests: XCTestCase {
             print("Both player have the same score")
         }
     }
+    
+    func testHasWinner(){
+        let playerOne = Player(playerName: "Player 1")
+        let playerTwo = Player(playerName: "Player 2")
+        
+        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+        game.playerWinPoint(player: game.playerOne)
+        
+        XCTAssert(game.hasWinner() == true)
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
