@@ -16,4 +16,8 @@ public class Game {
         self.playerOne = firstPlayer
         self.playerTwo = secondPlayer
     }
+    
+    func playerWinPoint(player: Player){
+        player.points += 1
+    }
 }

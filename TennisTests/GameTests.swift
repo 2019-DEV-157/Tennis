@@ -26,6 +26,17 @@ class GameTests: XCTestCase {
         
         XCTAssert(game.playerOne === playerOne)
     }
+    
+    func testPlayerWinPoint(){
+        let playerOne = Player(playerName: "Player 1")
+        let playerTwo = Player(playerName: "Player 2")
+        
+        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+        game.playerWinPoint(player: game.playerOne)
+        
+        XCTAssert(game.playerOne.points == 1)
+        XCTAssert(game.playerTwo.points == 0)
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
