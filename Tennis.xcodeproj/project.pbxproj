@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3CFBFA7B2282D6CE0016A811 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA7A2282D6CE0016A811 /* main.swift */; };
-		3CFBFA8A228301290016A811 /* TennisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA89228301290016A811 /* TennisTests.swift */; };
+		3CFBFA902283021C0016A811 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA7A2282D6CE0016A811 /* main.swift */; };
+		3CFBFA92228303D50016A811 /* TennisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA89228301290016A811 /* TennisTests.swift */; };
+		3CFBFA96228306860016A811 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA7A2282D6CE0016A811 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -172,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CFBFA7B2282D6CE0016A811 /* main.swift in Sources */,
+				3CFBFA96228306860016A811 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CFBFA8A228301290016A811 /* TennisTests.swift in Sources */,
+				3CFBFA92228303D50016A811 /* TennisTests.swift in Sources */,
+				3CFBFA902283021C0016A811 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
