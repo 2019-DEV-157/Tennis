@@ -62,7 +62,10 @@ class GameTests: XCTestCase {
         
         let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
         game.playerWinPoint(player: game.playerOne)
-        
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerOne)
+//        game.playerWinPoint(player: game.playerOne)
+
         XCTAssert(game.hasWinner() == true)
     }
 

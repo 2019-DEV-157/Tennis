@@ -34,6 +34,12 @@ public class Game {
     }
     
     func hasWinner() -> Bool {
-        return true
+        if (playerTwo.points >= 4 && playerTwo.points >= playerOne.points + 2){
+            return true
+        }else if (playerOne.points >= 4 && playerOne.points >= playerTwo.points + 2){
+            return true
+        }else{
+            return false
+        }
     }
 }
