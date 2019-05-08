@@ -21,7 +21,15 @@ public class Game {
         player.points += 1
     }
     
-    func getPlayerWithHighestScore() -> Player{
-        return self.playerTwo
+    func getPlayerWithHighestScore() -> Player?{
+        if (playerOne.points != playerTwo.points){
+            if (playerOne.points > playerTwo.points){
+                return playerOne
+            }else{
+                return playerTwo
+            }
+        }else{
+            return nil
+        }
     }
 }

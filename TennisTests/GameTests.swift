@@ -43,11 +43,17 @@ class GameTests: XCTestCase {
         let playerTwo = Player(playerName: "Player 2")
         
         let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+        game.playerWinPoint(player: game.playerOne)
         game.playerWinPoint(player: game.playerTwo)
         
-        let playerWithHighestScore = game.getPlayerWithHighestScore()
-        
-        XCTAssert(playerWithHighestScore === game.playerTwo)
+        if let playerWithHighestScore = game.getPlayerWithHighestScore(){
+            print(playerWithHighestScore.name)
+
+            XCTAssert(playerWithHighestScore === game.playerTwo)
+        }else{
+            print(game.playerOne.points == game.playerTwo.points)
+            print("Both player have the same score")
+        }
     }
 
     func testPerformanceExample() {
