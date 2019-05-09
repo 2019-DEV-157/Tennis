@@ -8,5 +8,21 @@
 
 import Foundation
 
-print("Hello, World!")
+var playerOne: Player
+var playerTwo: Player
+var game: Game
+var tennisInput: TennisInput
 
+tennisInput = TennisInput()
+
+playerOne = Player(playerName: tennisInput.printMessageWithAnswer(message: "What is the name of the first player"))
+playerTwo = Player(playerName: tennisInput.printMessageWithAnswer(message: "What is the name of the second player"))
+game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+
+while !Score().hasWinner(game: game){
+    let playerWhoScore = tennisInput.selectPlayerWhoScore(firstPlayer: playerOne, secondPlayer: playerTwo)
+    game.playerWinPoint(player: playerWhoScore)
+    print(game.getScore())
+}
+
+exit(0)
