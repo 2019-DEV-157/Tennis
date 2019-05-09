@@ -46,4 +46,15 @@ public class Game {
     func isDeuce() -> Bool {
         return (playerOne.points == playerTwo.points && playerOne.points >= 3)
     }
+    
+    func hasAdvantage() -> Bool {
+        if (playerTwo.points >= 4 && playerTwo.points == playerOne.points + 1){
+            return true
+        }
+        if (playerOne.points >= 4 && playerOne.points == playerTwo.points + 1){
+            return true
+        }else{
+            return false
+        }
+    }
 }

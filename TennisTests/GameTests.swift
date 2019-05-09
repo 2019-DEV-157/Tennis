@@ -76,8 +76,42 @@ class GameTests: XCTestCase {
         let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
         game.playerWinPoint(player: game.playerOne)
         game.playerWinPoint(player: game.playerTwo)
+        //1-1
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerTwo)
+        // 2-2
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerTwo)
+        // 3-3
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerTwo)
+        // 4-4
         
         XCTAssert(game.isDeuce() == true)
+    }
+    
+    func testHasAdvantage(){
+        let playerOne = Player(playerName: "Player 1")
+        let playerTwo = Player(playerName: "Player 2")
+        
+        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerTwo)
+        //1-1
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerTwo)
+        // 2-2
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerTwo)
+        // 3-3
+        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerTwo)
+        // 4-4
+        game.playerWinPoint(player: game.playerOne)
+        // Adv playerOne
+        
+        XCTAssert(game.hasAdvantage() == true)
+        XCTAssert(game.getPlayerWithHighestScore() === playerOne)
     }
 
     func testPerformanceExample() {
