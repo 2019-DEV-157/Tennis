@@ -43,7 +43,7 @@ public class Score {
     }
     
     func isDeuce(game: Game) -> Bool {
-        return (game.firstPlayer.points == game.secondPlayer.points && game.firstPlayer.points >= Constants.POINT_DIFFERENCE_FOR_ADVANTAGE)
+        return (game.firstPlayer.points == game.secondPlayer.points && game.firstPlayer.points >= Constants.POINTS_FOR_DEUCE_ABLE)
     }
     
     func hasAdvantage(game: Game) -> Bool {
