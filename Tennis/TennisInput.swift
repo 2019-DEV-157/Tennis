@@ -16,4 +16,10 @@ public class TennisInput {
         let strData = String(data: inputData, encoding: String.Encoding.utf8)!
         return strData.trimmingCharacters(in: CharacterSet.newlines)
     }
+    
+    func printMessageWithAnswer(message: String) -> String{
+        print(message)
+        let answer = getInput()
+        return answer
+    }
 }

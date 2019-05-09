@@ -20,8 +20,7 @@ playerTwo = Player(playerName: "David")
 
 game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
 
-print("test input")
-tennisInput.
+print(tennisInput.printMessageWithAnswer(message: "What is the name of the first player"))
 
 //Fifteen - Love
 game.playerWinPoint(player: playerOne)
