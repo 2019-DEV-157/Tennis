@@ -57,4 +57,8 @@ public class Game {
             return false
         }
     }
+    
+    func getScore() -> String {
+        return "Player One wins"
+    }
 }

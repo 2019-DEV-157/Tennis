@@ -113,6 +113,17 @@ class GameTests: XCTestCase {
         XCTAssert(game.hasAdvantage() == true)
         XCTAssert(game.getPlayerWithHighestScore() === playerOne)
     }
+    
+    func testGetScore(){
+        let playerOne = Player(playerName: "Player 1")
+        let playerTwo = Player(playerName: "Player 2")
+        
+        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+        game.playerWinPoint(player: game.playerOne)
+        
+        game.getScore()
+        XCTAssert(game.getScore() == "Player One wins")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
