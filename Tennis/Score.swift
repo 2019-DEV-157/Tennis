@@ -32,9 +32,9 @@ public class Score {
     }
     
     func hasWinner(game: Game) -> Bool {
-        if (game.playerTwo.points >= Constants.POINTS_TO_WIN && game.playerTwo.points >= game.playerOne.points + Constants.POINT_DIFFERENCE_TO_WIN){
+        if (game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points >= game.firstPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN){
             return true
-        }else if(game.playerOne.points >= Constants.POINTS_TO_WIN && game.playerOne.points >= game.playerTwo.points + Constants.POINT_DIFFERENCE_TO_WIN){
+        }else if(game.firstPlayer.points >= Constants.POINTS_TO_WIN && game.firstPlayer.points >= game.secondPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN){
             return true
         }
         else{
@@ -43,14 +43,14 @@ public class Score {
     }
     
     func isDeuce(game: Game) -> Bool {
-        return (game.playerOne.points == game.playerTwo.points && game.playerOne.points >= Constants.POINT_DIFFERENCE_FOR_ADVANTAGE)
+        return (game.firstPlayer.points == game.secondPlayer.points && game.firstPlayer.points >= Constants.POINT_DIFFERENCE_FOR_ADVANTAGE)
     }
     
     func hasAdvantage(game: Game) -> Bool {
-        if (game.playerTwo.points >= Constants.POINTS_TO_WIN && game.playerTwo.points == game.playerOne.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE){
+        if (game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points == game.firstPlayer.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE){
             return true
         }
-        if (game.playerOne.points >= Constants.POINTS_TO_WIN && game.playerOne.points == game.playerTwo.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE){
+        if (game.firstPlayer.points >= Constants.POINTS_TO_WIN && game.firstPlayer.points == game.secondPlayer.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE){
             return true
         }else{
             return false
@@ -58,11 +58,11 @@ public class Score {
     }
     
     func getPlayerWithHighestScore(game: Game) -> Player?{
-        if (game.playerOne.points != game.playerTwo.points){
-            if (game.playerOne.points > game.playerTwo.points){
-                return game.playerOne
+        if (game.firstPlayer.points != game.secondPlayer.points){
+            if (game.firstPlayer.points > game.secondPlayer.points){
+                return game.firstPlayer
             }else{
-                return game.playerTwo
+                return game.secondPlayer
             }
         }else{
             return nil
@@ -86,7 +86,7 @@ public class Score {
             return "Deuce"
         }
         
-        if let pointsPlayerOne = Points(rawValue: game.playerOne.points), let pointsPlayerTwo = Points(rawValue: game.playerTwo.points) {
+        if let pointsPlayerOne = Points(rawValue: game.firstPlayer.points), let pointsPlayerTwo = Points(rawValue: game.secondPlayer.points) {
             return "\(pointsPlayerOne.description()) - \(pointsPlayerTwo.description())"
         }
         

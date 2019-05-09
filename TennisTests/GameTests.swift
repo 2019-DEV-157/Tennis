@@ -24,7 +24,7 @@ class GameTests: XCTestCase {
         
         let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
         
-        XCTAssert(game.playerOne === playerOne)
+        XCTAssert(game.firstPlayer === playerOne)
     }
     
     func testPlayerWinPoint(){
@@ -32,10 +32,10 @@ class GameTests: XCTestCase {
         let playerTwo = Player(playerName: "Player 2")
         
         let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
-        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.firstPlayer)
         
-        XCTAssert(game.playerOne.points == 1)
-        XCTAssert(game.playerTwo.points == 0)
+        XCTAssert(game.firstPlayer.points == 1)
+        XCTAssert(game.secondPlayer.points == 0)
     }
     
     func testGetScore(){
@@ -43,22 +43,22 @@ class GameTests: XCTestCase {
         let playerTwo = Player(playerName: "Player 2")
         
         let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
-        game.playerWinPoint(player: game.playerOne)
-        game.playerWinPoint(player: game.playerTwo)
+        game.playerWinPoint(player: game.firstPlayer)
+        game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(game.getScore() == "Fifteen - Fifteen")
-        game.playerWinPoint(player: game.playerOne)
-        game.playerWinPoint(player: game.playerTwo)
+        game.playerWinPoint(player: game.firstPlayer)
+        game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(game.getScore() == "Thirty - Thirty")
-        game.playerWinPoint(player: game.playerOne)
-        game.playerWinPoint(player: game.playerTwo)
+        game.playerWinPoint(player: game.firstPlayer)
+        game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(game.getScore() == "Deuce")
-        game.playerWinPoint(player: game.playerTwo)
+        game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(game.getScore() == "Advantage Player 2")
-        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.firstPlayer)
         XCTAssert(game.getScore() == "Deuce")
-        game.playerWinPoint(player: game.playerTwo)
+        game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(game.getScore() == "Advantage Player 2")
-        game.playerWinPoint(player: game.playerTwo)
+        game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(game.getScore() == "Player 2 wins")
     }
 }

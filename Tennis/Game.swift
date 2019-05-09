@@ -9,12 +9,12 @@
 import Foundation
 
 public class Game {
-    private (set) var playerOne: Player
-    private (set) var playerTwo: Player
+    private (set) var firstPlayer: Player
+    private (set) var secondPlayer: Player
     
     init(firstPlayer: Player, secondPlayer: Player){
-        self.playerOne = firstPlayer
-        self.playerTwo = secondPlayer
+        self.firstPlayer = firstPlayer
+        self.secondPlayer = secondPlayer
     }
     
     func playerWinPoint(player: Player){
