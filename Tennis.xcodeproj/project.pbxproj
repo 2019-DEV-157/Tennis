@@ -17,6 +17,7 @@
 		3C6C71262284236800FC3E8A /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C71242284232300FC3E8A /* Score.swift */; };
 		3C6C71282284250B00FC3E8A /* ScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C71272284250B00FC3E8A /* ScoreTests.swift */; };
 		3C6C712A228461BB00FC3E8A /* TennisInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C7129228461BB00FC3E8A /* TennisInput.swift */; };
+		3C6C712D22846A4D00FC3E8A /* TennisInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C7129228461BB00FC3E8A /* TennisInput.swift */; };
 		3CFBFA902283021C0016A811 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA7A2282D6CE0016A811 /* main.swift */; };
 		3CFBFA92228303D50016A811 /* TennisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA89228301290016A811 /* TennisTests.swift */; };
 		3CFBFA96228306860016A811 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFBFA7A2282D6CE0016A811 /* main.swift */; };
@@ -215,6 +216,7 @@
 				3C6C712122830B2600FC3E8A /* GameTests.swift in Sources */,
 				3C6C711F22830B0000FC3E8A /* Game.swift in Sources */,
 				3CFBFA92228303D50016A811 /* TennisTests.swift in Sources */,
+				3C6C712D22846A4D00FC3E8A /* TennisInput.swift in Sources */,
 				3C6C711B228309E700FC3E8A /* PlayerTests.swift in Sources */,
 				3CFBFA902283021C0016A811 /* main.swift in Sources */,
 			);
