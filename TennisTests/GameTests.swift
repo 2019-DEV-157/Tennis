@@ -64,7 +64,7 @@ class GameTests: XCTestCase {
         game.playerWinPoint(player: game.playerOne)
         game.playerWinPoint(player: game.playerOne)
         game.playerWinPoint(player: game.playerOne)
-//        game.playerWinPoint(player: game.playerOne)
+        game.playerWinPoint(player: game.playerOne)
 
         XCTAssert(game.hasWinner() == true)
     }
