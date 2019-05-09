@@ -10,14 +10,6 @@ import XCTest
 
 class GameTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testGameInit() {
         let playerOne = Player(playerName: "Player 1")
         let playerTwo = Player(playerName: "Player 2")

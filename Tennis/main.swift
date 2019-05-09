@@ -20,7 +20,7 @@ playerTwo = Player(playerName: tennisInput.printMessageWithAnswer(message: "What
 game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
 
 while !Score().hasWinner(game: game){
-    var playerWhoScore = tennisInput.selectPlayerWhoScore(firstPlayer: playerOne, secondPlayer: playerTwo)
+    let playerWhoScore = tennisInput.selectPlayerWhoScore(firstPlayer: playerOne, secondPlayer: playerTwo)
     game.playerWinPoint(player: playerWhoScore)
     print(game.getScore())
 }
