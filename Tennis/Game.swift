@@ -21,60 +21,7 @@ public class Game {
         player.points += 1
     }
     
-    func getPlayerWithHighestScore() -> Player?{
-        if (playerOne.points != playerTwo.points){
-            if (playerOne.points > playerTwo.points){
-                return playerOne
-            }else{
-                return playerTwo
-            }
-        }else{
-            return nil
-        }
-    }
-    
-    func hasWinner() -> Bool {
-        if (playerTwo.points >= 4 && playerTwo.points >= playerOne.points + 2){
-            return true
-        }else if (playerOne.points >= 4 && playerOne.points >= playerTwo.points + 2){
-            return true
-        }else{
-            return false
-        }
-    }
-    
-    func isDeuce() -> Bool {
-        return (playerOne.points == playerTwo.points && playerOne.points >= 3)
-    }
-    
-    func hasAdvantage() -> Bool {
-        if (playerTwo.points >= 4 && playerTwo.points == playerOne.points + 1){
-            return true
-        }
-        if (playerOne.points >= 4 && playerOne.points == playerTwo.points + 1){
-            return true
-        }else{
-            return false
-        }
-    }
-    
-    func getScore() -> String {
-        if (hasWinner()){
-            if let winner = getPlayerWithHighestScore(){
-                return winner.name + " wins"
-            }
-        }
-        
-        if (hasAdvantage()){
-            if let advantage = getPlayerWithHighestScore(){
-                return "Advantage " + advantage.name;
-            }
-        }
-        
-        if (isDeuce()){
-            return "Deuce"
-        }
-        
-        return "\(playerOne.points) - \(playerTwo.points)"
+    func getScore() -> String{
+        return Score().getScore(game: self)
     }
 }
