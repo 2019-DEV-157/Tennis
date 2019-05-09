@@ -11,11 +11,17 @@ import Foundation
 var playerOne: Player
 var playerTwo: Player
 var game: Game
+var tennisInput: TennisInput
+
+tennisInput = TennisInput()
 
 playerOne = Player(playerName: "John")
 playerTwo = Player(playerName: "David")
 
 game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+
+print("test input")
+tennisInput.
 
 //Fifteen - Love
 game.playerWinPoint(player: playerOne)
