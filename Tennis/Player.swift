@@ -15,6 +15,6 @@ public class Player {
     
     public init(playerName:String) {
         self.name = playerName
-        self.points = 0
+        self.points = Constants.START_SCORE
     }
 }

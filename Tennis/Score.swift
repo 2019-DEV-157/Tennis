@@ -32,24 +32,25 @@ public class Score {
     }
     
     func hasWinner(game: Game) -> Bool {
-        if (game.playerTwo.points >= 4 && game.playerTwo.points >= game.playerOne.points + 2){
+        if (game.playerTwo.points >= Constants.POINTS_TO_WIN && game.playerTwo.points >= game.playerOne.points + Constants.POINT_DIFFERENCE_TO_WIN){
             return true
-        }else if (game.playerOne.points >= 4 && game.playerOne.points >= game.playerTwo.points + 2){
+        }else if(game.playerOne.points >= Constants.POINTS_TO_WIN && game.playerOne.points >= game.playerTwo.points + Constants.POINT_DIFFERENCE_TO_WIN){
             return true
-        }else{
+        }
+        else{
             return false
         }
     }
     
     func isDeuce(game: Game) -> Bool {
-        return (game.playerOne.points == game.playerTwo.points && game.playerOne.points >= 3)
+        return (game.playerOne.points == game.playerTwo.points && game.playerOne.points >= Constants.POINT_DIFFERENCE_FOR_ADVANTAGE)
     }
     
     func hasAdvantage(game: Game) -> Bool {
-        if (game.playerTwo.points >= 4 && game.playerTwo.points == game.playerOne.points + 1){
+        if (game.playerTwo.points >= Constants.POINTS_TO_WIN && game.playerTwo.points == game.playerOne.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE){
             return true
         }
-        if (game.playerOne.points >= 4 && game.playerOne.points == game.playerTwo.points + 1){
+        if (game.playerOne.points >= Constants.POINTS_TO_WIN && game.playerOne.points == game.playerTwo.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE){
             return true
         }else{
             return false

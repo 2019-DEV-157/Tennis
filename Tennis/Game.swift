@@ -18,7 +18,7 @@ public class Game {
     }
     
     func playerWinPoint(player: Player){
-        player.points += 1
+        player.points += Constants.POINT_VALUE
     }
     
     func getScore() -> String{
