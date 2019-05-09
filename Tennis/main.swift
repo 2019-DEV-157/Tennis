@@ -15,12 +15,9 @@ var tennisInput: TennisInput
 
 tennisInput = TennisInput()
 
-playerOne = Player(playerName: "John")
-playerTwo = Player(playerName: "David")
-
+playerOne = Player(playerName: tennisInput.printMessageWithAnswer(message: "What is the name of the first player"))
+playerTwo = Player(playerName: tennisInput.printMessageWithAnswer(message: "What is the name of the second player"))
 game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
-
-print(tennisInput.printMessageWithAnswer(message: "What is the name of the first player"))
 
 //Fifteen - Love
 game.playerWinPoint(player: playerOne)
