@@ -8,6 +8,23 @@
 
 import Foundation
 
+enum Points: Int {
+    case Love, Fifteen, Thirty, Forty
+    
+    func description() -> String{
+        switch self {
+        case .Love:
+            return "Love"
+        case .Fifteen:
+            return "Fifteen"
+        case .Thirty:
+                return "Thirty"
+        case .Forty:
+            return "Forty"
+    }
+}
+}
+
 public class Score {
     
     func getScore() -> String{
@@ -68,6 +85,10 @@ public class Score {
             return "Deuce"
         }
         
-        return "\(game.playerOne.points) - \(game.playerTwo.points)"
+        if let pointsPlayerOne = Points(rawValue: game.playerOne.points), let pointsPlayerTwo = Points(rawValue: game.playerTwo.points) {
+            return "\(pointsPlayerOne.description()) - \(pointsPlayerTwo.description())"
+        }
+        
+        return ""
     }
 }
