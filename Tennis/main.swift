@@ -19,34 +19,10 @@ playerOne = Player(playerName: tennisInput.printMessageWithAnswer(message: "What
 playerTwo = Player(playerName: tennisInput.printMessageWithAnswer(message: "What is the name of the second player"))
 game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
 
-//Fifteen - Love
-game.playerWinPoint(player: playerOne)
-print(game.getScore())
-//Fifteen - Fifteen
-game.playerWinPoint(player: playerTwo)
-print(game.getScore())
-//Fifteen - Thirty
-game.playerWinPoint(player: playerTwo)
-print(game.getScore())
-//Thirty - Thirty
-game.playerWinPoint(player: playerOne)
-print(game.getScore())
-//Thirty - Forty
-game.playerWinPoint(player: playerTwo)
-print(game.getScore())
-//Deuce
-game.playerWinPoint(player: playerOne)
-print(game.getScore())
-//Advantage John
-game.playerWinPoint(player: playerOne)
-print(game.getScore())
-//Deuce
-game.playerWinPoint(player: playerTwo)
-print(game.getScore())
-//Advantage John
-game.playerWinPoint(player: playerOne)
-print(game.getScore())
-//John wins
-game.playerWinPoint(player: playerOne)
-print(game.getScore())
+while !Score().hasWinner(game: game){
+    var playerWhoScore = tennisInput.selectPlayerWhoScore(firstPlayer: playerOne, secondPlayer: playerTwo)
+    game.playerWinPoint(player: playerWhoScore)
+    print(game.getScore())
+}
 
+exit(0)

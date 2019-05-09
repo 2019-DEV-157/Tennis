@@ -22,4 +22,19 @@ public class TennisInput {
         let answer = getInput()
         return answer
     }
+    
+    func selectPlayerWhoScore(firstPlayer: Player, secondPlayer: Player) -> Player{
+        let firstPlayerNumber = 1
+        let secondPlayerNumber = 2
+        
+        let message = "Select the player who won the point: write \(firstPlayerNumber) for \(firstPlayer.name) & \(secondPlayerNumber) for \(secondPlayer.name)"
+        
+        let answer = printMessageWithAnswer(message: message)
+        // Should check for other Character...
+        if answer == "1"{
+            return firstPlayer
+        }else{
+            return secondPlayer
+        }
+    }
 }
