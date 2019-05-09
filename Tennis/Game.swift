@@ -59,6 +59,22 @@ public class Game {
     }
     
     func getScore() -> String {
-        return "Player One wins"
+        if (hasWinner()){
+            if let winner = getPlayerWithHighestScore(){
+                return winner.name + " wins"
+            }
+        }
+        
+        if (hasAdvantage()){
+            if let advantage = getPlayerWithHighestScore(){
+                return "Advantage " + advantage.name;
+            }
+        }
+        
+        if (isDeuce()){
+            return "Deuce"
+        }
+        
+        return "\(playerOne.points) - \(playerTwo.points)"
     }
 }

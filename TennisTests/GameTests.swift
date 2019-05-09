@@ -121,8 +121,8 @@ class GameTests: XCTestCase {
         let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
         game.playerWinPoint(player: game.playerOne)
         
-        game.getScore()
-        XCTAssert(game.getScore() == "Player One wins")
+        let score = game.getScore()
+        XCTAssert(score == "1 - 0")
     }
 
     func testPerformanceExample() {
