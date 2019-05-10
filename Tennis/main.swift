@@ -12,14 +12,16 @@ var playerOne: Player
 var playerTwo: Player
 var game: Game
 var tennisInput: TennisInput
+var score: Score
 
+score = Score.shared
 tennisInput = TennisInput()
 
 playerOne = Player(playerName: tennisInput.printMessageWithAnswer(message: "What is the name of the first player"))
 playerTwo = Player(playerName: tennisInput.printMessageWithAnswer(message: "What is the name of the second player"))
 game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
 
-while !Score().hasWinner(game: game){
+while !score.hasWinner(game: game){
     let playerWhoScore = tennisInput.selectPlayerWhoScore(firstPlayer: playerOne, secondPlayer: playerTwo)
     game.playerWinPoint(player: playerWhoScore)
     print(game.getScore())

@@ -11,10 +11,12 @@ import Foundation
 public class Game {
     private (set) var firstPlayer: Player
     private (set) var secondPlayer: Player
+    var score: Score
     
     init(firstPlayer: Player, secondPlayer: Player){
         self.firstPlayer = firstPlayer
         self.secondPlayer = secondPlayer
+        self.score = Score.shared
     }
     
     func playerWinPoint(player: Player){
@@ -22,6 +24,6 @@ public class Game {
     }
     
     func getScore() -> String{
-        return Score().getScore(game: self)
+        return score.getScore(game: self)
     }
 }

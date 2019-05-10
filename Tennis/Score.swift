@@ -27,6 +27,8 @@ enum Points: Int {
 
 public class Score {
     
+    static let shared: Score = Score()
+        
     func getScore() -> String{
         return "score"
     }
