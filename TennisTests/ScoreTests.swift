@@ -10,11 +10,26 @@ import XCTest
 
 class ScoreTests: XCTestCase {
     
-    func testHasWinner(){
-        let playerOne = Player(playerName: "Player 1")
-        let playerTwo = Player(playerName: "Player 2")
+    var playerOne: Player!
+    var playerTwo: Player!
+    
+    var game : Game!
+    
+    override func setUp() {
+        playerOne = Player(playerName: "Player 1")
+        playerTwo = Player(playerName: "Player 2")
         
-        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+        game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+    }
+    
+    override func tearDown() {
+        playerOne = nil
+        playerTwo = nil
+        game = nil
+    }
+    
+    func testHasWinner(){
+       
         game.playerWinPoint(player: game.firstPlayer)
         game.playerWinPoint(player: game.firstPlayer)
         game.playerWinPoint(player: game.firstPlayer)
@@ -24,10 +39,7 @@ class ScoreTests: XCTestCase {
     }
     
     func testIsDeuce(){
-        let playerOne = Player(playerName: "Player 1")
-        let playerTwo = Player(playerName: "Player 2")
-        
-        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+      
         game.playerWinPoint(player: game.firstPlayer)
         game.playerWinPoint(player: game.secondPlayer)
         //1-1
@@ -45,10 +57,7 @@ class ScoreTests: XCTestCase {
     }
     
     func testHasAdvantage(){
-        let playerOne = Player(playerName: "Player 1")
-        let playerTwo = Player(playerName: "Player 2")
         
-        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
         game.playerWinPoint(player: game.firstPlayer)
         game.playerWinPoint(player: game.secondPlayer)
         //1-1
@@ -69,10 +78,7 @@ class ScoreTests: XCTestCase {
     }
     
     func testPlayerWithHighestScore(){
-        let playerOne = Player(playerName: "Player 1")
-        let playerTwo = Player(playerName: "Player 2")
-        
-        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+       
         game.playerWinPoint(player: game.firstPlayer)
         game.playerWinPoint(player: game.secondPlayer)
         
@@ -87,10 +93,7 @@ class ScoreTests: XCTestCase {
     }
     
     func testGetScore(){
-        let playerOne = Player(playerName: "Player 1")
-        let playerTwo = Player(playerName: "Player 2")
-        
-        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+       
         game.playerWinPoint(player: game.firstPlayer)
         game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(Score().getScore(game: game) == "Fifteen - Fifteen")
