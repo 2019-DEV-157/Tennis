@@ -9,9 +9,20 @@
 import XCTest
 
 class PlayerTests: XCTestCase {
+    
+    var player: Player!
+    
+    override func setUp() {
+        player = Player(playerName: "John")
+    }
+    
+    override func tearDown() {
+        player = nil
+    }
 
     func testPlayerInit() {
-        let newPlayer = Player(playerName: "John")
-        XCTAssert(newPlayer.name == "John")
+        
+        XCTAssert(player.name == "John")
+        XCTAssert(player.points == 0)
     }
 }
