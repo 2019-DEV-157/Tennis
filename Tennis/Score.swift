@@ -25,7 +25,7 @@ enum Points: Int {
 }
 }
 
-public class Score {
+class Score {
     
     func hasWinner(game: Game) -> Bool {
       return firstPlayerWins(game: game) || secondPlayerWins(game: game)

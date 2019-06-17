@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TennisInput {
+class TennisInput {
     
     func getInput() -> String {
         let keyboard = FileHandle.standardInput

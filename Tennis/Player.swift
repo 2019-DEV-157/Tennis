@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Player: Equatable {
+class Player: Equatable {
     
     let name:String
     var points:Int

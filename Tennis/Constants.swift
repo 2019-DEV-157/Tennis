@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Constants {
+struct Constants {
     static let START_SCORE: Int = 0
     static let POINT_VALUE: Int = 1
     static let POINT_DIFFERENCE_TO_WIN: Int = 2

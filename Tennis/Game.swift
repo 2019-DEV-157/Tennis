@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Game {
+class Game {
     let firstPlayer: Player
     let secondPlayer: Player
     
