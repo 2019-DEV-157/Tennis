@@ -9,21 +9,32 @@
 import XCTest
 
 class GameTests: XCTestCase {
+    
+    var playerOne: Player!
+    var playerTwo: Player!
+    
+    var game : Game!
+    
+    override func setUp() {
+        playerOne = Player(playerName: "Player 1")
+        playerTwo = Player(playerName: "Player 2")
+        
+        game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
+    }
+    
+    override func tearDown() {
+        playerOne = nil
+        playerTwo = nil
+        game = nil
+    }
 
     func testGameInit() {
-        let playerOne = Player(playerName: "Player 1")
-        let playerTwo = Player(playerName: "Player 2")
-        
-        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
         
         XCTAssert(game.firstPlayer === playerOne)
     }
     
     func testPlayerWinPoint(){
-        let playerOne = Player(playerName: "Player 1")
-        let playerTwo = Player(playerName: "Player 2")
         
-        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
         game.playerWinPoint(player: game.firstPlayer)
         
         XCTAssert(game.firstPlayer.points == 1)
@@ -31,10 +42,7 @@ class GameTests: XCTestCase {
     }
     
     func testGetScore(){
-        let playerOne = Player(playerName: "Player 1")
-        let playerTwo = Player(playerName: "Player 2")
         
-        let game = Game(firstPlayer: playerOne, secondPlayer: playerTwo)
         game.playerWinPoint(player: game.firstPlayer)
         game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(game.getScore() == "Fifteen - Fifteen")
