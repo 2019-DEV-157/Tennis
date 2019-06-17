@@ -28,13 +28,21 @@ public class TennisInput {
         let secondPlayerNumber = 2
         
         let message = "Select the player who won the point: write \(firstPlayerNumber) for \(firstPlayer.name) & \(secondPlayerNumber) for \(secondPlayer.name)"
+        var answer: String
         
-        let answer = printMessageWithAnswer(message: message)
-        // Should check for other Character...
+        repeat {
+            answer = printMessageWithAnswer(message: message)
+        }
+            while( !checkValidyOfAnswer(answer: answer) )
+        
         if answer == "1"{
             return firstPlayer
         }else{
             return secondPlayer
         }
+    }
+    
+    private func checkValidyOfAnswer(answer: String) -> Bool{
+        return answer == "1" || answer == "2"
     }
 }
