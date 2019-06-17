@@ -61,4 +61,8 @@ class GameTests: XCTestCase {
         game.playerWinPoint(player: game.secondPlayer)
         XCTAssert(game.getScore() == "Player 2 wins")
     }
+    
+    func testGameHasEnded(){
+        XCTAssertFalse(game.hasEnded())
+    }
 }

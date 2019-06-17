@@ -24,4 +24,8 @@ class Game {
     func getScore() -> String{
         return Score().getScore(game: self)
     }
+    
+    func hasEnded() -> Bool {
+        return true
+    }
 }
