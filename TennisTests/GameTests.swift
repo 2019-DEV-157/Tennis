@@ -30,7 +30,7 @@ class GameTests: XCTestCase {
 
     func testGameInit() {
         
-        XCTAssert(game.firstPlayer === playerOne)
+        XCTAssert(game.firstPlayer == playerOne)
     }
     
     func testPlayerWinPoint(){
