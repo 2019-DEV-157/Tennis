@@ -35,7 +35,7 @@ class ScoreTests: XCTestCase {
         game.playerWinPoint(player: game.firstPlayer)
         game.playerWinPoint(player: game.firstPlayer)
         
-        XCTAssert(Score().hasWinner(game: game) == true)
+        XCTAssertTrue(Score().hasWinner(game: game))
     }
     
     func testIsDeuce(){
@@ -53,7 +53,7 @@ class ScoreTests: XCTestCase {
         game.playerWinPoint(player: game.secondPlayer)
         // 4-4
         
-        XCTAssert(Score().isDeuce(game: game) == true)
+        XCTAssertTrue(Score().isDeuce(game: game))
     }
     
     func testHasAdvantage(){
@@ -73,8 +73,8 @@ class ScoreTests: XCTestCase {
         game.playerWinPoint(player: game.firstPlayer)
         // Adv playerOne
         
-        XCTAssert(Score().hasAdvantage(game: game) == true)
-        XCTAssert(Score().getPlayerWithHighestScore(game: game) === playerOne)
+        XCTAssertTrue(Score().hasAdvantage(game: game))
+        XCTAssert(Score().getPlayerWithHighestScore(game: game) == playerOne)
     }
     
     func testPlayerWithHighestScore(){
@@ -85,7 +85,7 @@ class ScoreTests: XCTestCase {
         if let playerWithHighestScore = Score().getPlayerWithHighestScore(game: game){
             print(playerWithHighestScore.name)
             
-            XCTAssert(playerWithHighestScore === game.secondPlayer)
+            XCTAssert(playerWithHighestScore == game.secondPlayer)
         }else{
             print(game.firstPlayer.points == game.secondPlayer.points)
             print("Both player have the same score")
