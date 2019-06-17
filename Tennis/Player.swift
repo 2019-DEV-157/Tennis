@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Player {
+public class Player: Equatable {
     
     private (set) var name:String
     var points:Int
@@ -16,5 +16,11 @@ public class Player {
     public init(playerName:String) {
         self.name = playerName
         self.points = Constants.START_SCORE
+    }
+    
+    public static func == (lhs: Player, rhs: Player) -> Bool {
+        return
+            lhs.name == rhs.name &&
+                lhs.points == rhs.points
     }
 }
