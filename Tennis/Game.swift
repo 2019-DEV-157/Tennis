@@ -26,6 +26,6 @@ class Game {
     }
     
     func hasEnded() -> Bool {
-        return true
+        return Score().hasWinner(game: self)
     }
 }

@@ -62,7 +62,30 @@ class GameTests: XCTestCase {
         XCTAssert(game.getScore() == "Player 2 wins")
     }
     
-    func testGameHasEnded(){
+    func testGameHasNotEnded(){
         XCTAssertFalse(game.hasEnded())
+    }
+    
+    func testGameHasEnded(){
+        
+        game.playerWinPoint(player: game.firstPlayer)
+        game.playerWinPoint(player: game.secondPlayer)
+        XCTAssert(game.getScore() == "Fifteen - Fifteen")
+        game.playerWinPoint(player: game.firstPlayer)
+        game.playerWinPoint(player: game.secondPlayer)
+        XCTAssert(game.getScore() == "Thirty - Thirty")
+        game.playerWinPoint(player: game.firstPlayer)
+        game.playerWinPoint(player: game.secondPlayer)
+        XCTAssert(game.getScore() == "Deuce")
+        game.playerWinPoint(player: game.secondPlayer)
+        XCTAssert(game.getScore() == "Advantage Player 2")
+        game.playerWinPoint(player: game.firstPlayer)
+        XCTAssert(game.getScore() == "Deuce")
+        game.playerWinPoint(player: game.secondPlayer)
+        XCTAssert(game.getScore() == "Advantage Player 2")
+        XCTAssertFalse(game.hasEnded())
+        game.playerWinPoint(player: game.secondPlayer)
+        XCTAssert(game.getScore() == "Player 2 wins")
+        XCTAssertTrue(game.hasEnded())
     }
 }
