@@ -28,14 +28,15 @@ enum Points: Int {
 public class Score {
     
     func hasWinner(game: Game) -> Bool {
-        if (game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points >= game.firstPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN){
-            return true
-        }else if(game.firstPlayer.points >= Constants.POINTS_TO_WIN && game.firstPlayer.points >= game.secondPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN){
-            return true
-        }
-        else{
-            return false
-        }
+      return firstPlayerWins(game: game) || secondPlayerWins(game: game)
+    }
+    
+    func firstPlayerWins(game: Game) -> Bool {
+        return game.firstPlayer.points >= Constants.POINTS_TO_WIN && game.firstPlayer.points >= game.secondPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN
+    }
+    
+    func secondPlayerWins(game: Game) -> Bool {
+        return game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points >= game.firstPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN
     }
     
     func isDeuce(game: Game) -> Bool {
