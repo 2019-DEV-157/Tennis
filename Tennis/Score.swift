@@ -27,10 +27,6 @@ enum Points: Int {
 
 public class Score {
     
-    func getScore() -> String{
-        return "score"
-    }
-    
     func hasWinner(game: Game) -> Bool {
         if (game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points >= game.firstPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN){
             return true
