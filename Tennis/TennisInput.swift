@@ -10,7 +10,7 @@ import Foundation
 
 class TennisInput {
     
-    func getInput() -> String {
+    private func getInput() -> String {
         let keyboard = FileHandle.standardInput
         let inputData = keyboard.availableData
         let strData = String(data: inputData, encoding: String.Encoding.utf8)!
