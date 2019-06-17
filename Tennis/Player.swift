@@ -10,7 +10,7 @@ import Foundation
 
 public class Player: Equatable {
     
-    private (set) var name:String
+    let name:String
     var points:Int
     
     public init(playerName:String) {

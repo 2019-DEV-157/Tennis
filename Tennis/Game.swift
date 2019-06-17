@@ -9,8 +9,8 @@
 import Foundation
 
 public class Game {
-    private (set) var firstPlayer: Player
-    private (set) var secondPlayer: Player
+    let firstPlayer: Player
+    let secondPlayer: Player
     
     init(firstPlayer: Player, secondPlayer: Player){
         self.firstPlayer = firstPlayer
