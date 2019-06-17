@@ -31,11 +31,11 @@ public class Score {
       return firstPlayerWins(game: game) || secondPlayerWins(game: game)
     }
     
-    func firstPlayerWins(game: Game) -> Bool {
+    private func firstPlayerWins(game: Game) -> Bool {
         return game.firstPlayer.points >= Constants.POINTS_TO_WIN && game.firstPlayer.points >= game.secondPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN
     }
     
-    func secondPlayerWins(game: Game) -> Bool {
+    private func secondPlayerWins(game: Game) -> Bool {
         return game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points >= game.firstPlayer.points + Constants.POINT_DIFFERENCE_TO_WIN
     }
     
@@ -47,37 +47,29 @@ public class Score {
         return firstPlayerHasAdvantage(game: game) || secondPlayerHasAdvantqge(game: game)
     }
     
-    func firstPlayerHasAdvantage(game: Game) -> Bool {
+    private func firstPlayerHasAdvantage(game: Game) -> Bool {
         return game.firstPlayer.points >= Constants.POINTS_TO_WIN && game.firstPlayer.points == game.secondPlayer.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE
     }
     
-    func secondPlayerHasAdvantqge(game: Game) -> Bool {
+    private func secondPlayerHasAdvantqge(game: Game) -> Bool {
         return game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points == game.firstPlayer.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE
     }
     
-    func getPlayerWithHighestScore(game: Game) -> Player?{
-        if (game.firstPlayer.points != game.secondPlayer.points){
-            if (game.firstPlayer.points > game.secondPlayer.points){
-                return game.firstPlayer
-            }else{
-                return game.secondPlayer
-            }
+    func getPlayerWithHighestScore(game: Game) -> Player{
+        if (game.firstPlayer.points > game.secondPlayer.points){
+            return game.firstPlayer
         }else{
-            return nil
+            return game.secondPlayer
         }
     }
     
     func getScore(game: Game) -> String {
         if (hasWinner(game: game)){
-            if let winner = getPlayerWithHighestScore(game: game){
-                return winner.name + " wins"
-            }
+            return getPlayerWithHighestScore(game: game).name + " wins"
         }
         
         if (hasAdvantage(game: game)){
-            if let advantage = getPlayerWithHighestScore(game: game){
-                return "Advantage " + advantage.name;
-            }
+            return "Advantage " + getPlayerWithHighestScore(game: game).name;
         }
         
         if (isDeuce(game: game)){

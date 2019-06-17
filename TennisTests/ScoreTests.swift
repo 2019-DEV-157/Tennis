@@ -77,19 +77,16 @@ class ScoreTests: XCTestCase {
         XCTAssert(Score().getPlayerWithHighestScore(game: game) == playerOne)
     }
     
-    func testPlayerWithHighestScore(){
+    func testPlayerOneWithHighestScore(){
        
         game.playerWinPoint(player: game.firstPlayer)
-        game.playerWinPoint(player: game.secondPlayer)
+        XCTAssert(Score().getPlayerWithHighestScore(game: game) == game.firstPlayer)
+    }
+    
+    func testPlayerTwoWithHighestScore(){
         
-        if let playerWithHighestScore = Score().getPlayerWithHighestScore(game: game){
-            print(playerWithHighestScore.name)
-            
-            XCTAssert(playerWithHighestScore == game.secondPlayer)
-        }else{
-            print(game.firstPlayer.points == game.secondPlayer.points)
-            print("Both player have the same score")
-        }
+        game.playerWinPoint(player: game.secondPlayer)
+        XCTAssert(Score().getPlayerWithHighestScore(game: game) == game.secondPlayer)
     }
     
     func testGetScore(){
