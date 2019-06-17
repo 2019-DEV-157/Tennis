@@ -44,14 +44,15 @@ public class Score {
     }
     
     func hasAdvantage(game: Game) -> Bool {
-        if (game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points == game.firstPlayer.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE){
-            return true
-        }
-        if (game.firstPlayer.points >= Constants.POINTS_TO_WIN && game.firstPlayer.points == game.secondPlayer.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE){
-            return true
-        }else{
-            return false
-        }
+        return firstPlayerHasAdvantage(game: game) || secondPlayerHasAdvantqge(game: game)
+    }
+    
+    func firstPlayerHasAdvantage(game: Game) -> Bool {
+        return game.firstPlayer.points >= Constants.POINTS_TO_WIN && game.firstPlayer.points == game.secondPlayer.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE
+    }
+    
+    func secondPlayerHasAdvantqge(game: Game) -> Bool {
+        return game.secondPlayer.points >= Constants.POINTS_TO_WIN && game.secondPlayer.points == game.firstPlayer.points + Constants.POINT_DIFFERENCE_FOR_ADVANTAGE
     }
     
     func getPlayerWithHighestScore(game: Game) -> Player?{
